@@ -1,0 +1,23 @@
+﻿@page
+@model Store.Pages.ErrorModel
+@{
+    ViewData["Title"] = "Error Page";
+}
+
+<div class="border-danger card m-auto mt-5" style="max-width: 800px">
+    <div class="card-header text-center" style="font-size: 1.3rem">@ViewData["Title"]</div>
+    <div class="card-body p-4 py-4">
+        <h5 class="card-title mb-4">Sorry But Something Went Wrong!</h5>
+        <div class="card-text">
+            @if (Model.ShowRequestId) {
+                <p>
+                    <strong>Please Log In:</strong> <code>@Model.RequestId</code>
+                </p>
+            }
+
+            <p>
+                Get In touch with Us <a asp-page="/ContactUs/Index">Contact Us</a>.
+            </p>
+        </div>
+    </div>
+</div>

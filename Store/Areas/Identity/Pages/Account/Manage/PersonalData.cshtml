@@ -1,0 +1,22 @@
+﻿@page
+@model PersonalDataModel
+@{
+    ViewData["Title"] = "Personal Information";
+}
+
+<div class="card m-auto" style="max-width: 600px">
+    <div class="bg-primary card-header py-3 text-center text-white" style="font-size: 1.1rem">
+        @ViewData["Title"]
+    </div>
+    <div class="card-body p-4 py-5">
+        <p>Your account contains personal information that you have provided to us. On this page, you can delete this information.</p>
+        <p>
+            <strong>Deleting this information will be permanent and irreversible. You won't be able to recover this information in the future.</strong>
+        </p>
+        <a asp-page="DeletePersonalData" class="btn btn-danger" id="delete">Delete Information</a>
+    </div>
+</div>
+
+@section Scripts {
+        <partial name="_ValidationScriptsPartial"/>
+}

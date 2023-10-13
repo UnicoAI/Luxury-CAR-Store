@@ -1,0 +1,17 @@
+@page
+@model Store.Pages.ContactUs.Success
+
+@{
+    ViewData["Title"] = "Contact Succes";
+}
+
+<div class="card m-auto mt-5 text-center" style="max-width: 600px">
+    <div class="bg-success card-header p-4 text-white" style="font-size: 1.4rem">
+        Your message has been successfully sent!
+    </div>
+    <div class="card-body my-3">
+        <p class="card-text">Thank you for sharing your opinion with us!</p>
+
+        <a asp-area="" asp-page="/Index" class="btn btn-primary">Return To Homepage</a>
+    </div>
+</div>

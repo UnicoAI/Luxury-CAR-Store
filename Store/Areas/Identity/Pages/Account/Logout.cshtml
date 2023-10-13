@@ -1,0 +1,36 @@
+﻿@page
+@model LogoutModel
+@{
+    ViewData["Title"] = "Log Out";
+}
+
+<header>
+    @{
+        if (User.Identity?.IsAuthenticated ?? false)
+        {
+            <div class="card m-auto mt-4 text-center" style="max-width: 700px">
+                <div class="bg-primary card-header py-3 text-white" style="font-size: 1.4rem">
+                    Log Out
+                </div>
+                <div class="card-body py-5">
+                    <h5 class="card-title" style="font-size: 1.1rem">Are you sure you want to log out of your account?</h5>
+                    <div class="d-flex flex-row gap-2 justify-content-center mt-4">
+                        <form asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/", new { area = "" })" class="form-inline" method="post">
+                            <button class="btn btn-danger" type="submit">Log Out</button>
+                        </form>
+                        <a asp-area="" asp-page="/Index" class="btn btn-outline-primary">Return to the homepage</a>
+                    </div>
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="card m-auto mt-4 text-center">
+                <div class="card-body py-5">
+                    <h5 class="card-title" style="font-size: 1.1rem">You have successfully logged out of your account.</h5>
+                    <a asp-area="" asp-page="/Index" class="btn btn-primary">Return to the homepage</a>
+                </div>
+            </div>
+        }
+    }
+</header>

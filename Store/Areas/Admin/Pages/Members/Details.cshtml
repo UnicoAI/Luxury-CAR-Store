@@ -1,0 +1,78 @@
+@page
+@model Store.Areas.Admin.Pages.Members.DetailsModel
+
+@{
+    ViewData["Title"] = "User Information";
+}
+
+<div class="card m-auto mb-3" style="max-width: 750px">
+    <div class="bg-primary card-header text-center text-white" style="font-size: 1.3rem">
+        @ViewData["Title"]
+    </div>
+    <div class="card-body p-4">
+        <dl class="row">
+            <dt class="col-sm-3">
+                @Html.DisplayNameFor(model => model.UserModel.Id)
+            </dt>
+            <dd class="align-items-center col-sm-9 d-flex">
+                @Html.DisplayFor(model => model.UserModel.Id)
+            </dd>
+            <dt class="col-sm-3">
+                @Html.DisplayNameFor(model => model.UserModel.Username)
+            </dt>
+            <dd class="align-items-center col-sm-9 d-flex">
+                @Html.DisplayFor(model => model.UserModel.Username)
+            </dd>
+            <dt class="col-sm-3">
+                @Html.DisplayNameFor(model => model.UserModel.Roles)
+            </dt>
+            <dd class="align-items-center col-sm-9 d-flex">
+                @Html.DisplayFor(model => model.UserModel.Roles)
+            </dd>
+            <dt class="col-sm-3">
+                @Html.DisplayNameFor(model => model.UserModel.Email)
+            </dt>
+            <dd class="align-items-center col-sm-9 d-flex">
+                @Html.DisplayFor(model => model.UserModel.Email)
+            </dd>
+            <dt class="col-sm-3">
+                @Html.DisplayNameFor(model => model.UserModel.Phone)
+            </dt>
+            <dd class="align-items-center col-sm-9 d-flex">
+                @if (Model.UserModel.Phone is null)
+                {
+                    <span>No phone</span>
+                }
+                else
+                {
+                    @Html.DisplayFor(model => model.UserModel.Phone)
+                }
+            </dd>
+            <dt class="col-sm-3">
+                @Html.DisplayNameFor(model => model.UserModel.IsLockout)
+            </dt>
+            <dd class="align-items-center col-sm-9 d-flex">
+                @if (Model.UserModel.IsLockout)
+                {
+                    <span class="text-danger">Yes</span>
+                }
+                else
+                {
+                    <span>No</span>
+                }
+            </dd>
+            <dt class="col-sm-3" style="font-size: 1rem">
+                @Html.DisplayNameFor(model => model.UserModel.ProductsBought)
+            </dt>
+            <dd class="align-items-center col-sm-9 d-flex">
+                @Html.DisplayFor(model => model.UserModel.ProductsBought)
+            </dd>
+        </dl>
+        <div>
+            <a asp-page="./Index">Back to List</a>
+        </div>
+    </div>
+</div>
+```
+
+This code has been translated into English with variable names and comments for better understanding.

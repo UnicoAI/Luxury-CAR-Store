@@ -1,0 +1,20 @@
+@page
+@model Store.Pages.Cart.Success
+
+@{
+    ViewData["Title"] = "Succes Order";
+}
+
+<div class="card m-auto mt-5 text-center" style="max-width: 600px">
+    <div class="bg-success card-header p-4 text-white" style="font-size: 1.4rem">
+        Your orders have been successfully registered
+    </div>
+    <div class="card-body my-3">
+        <p class="card-text mb-4">
+            Each and every order of yours has been registered and will be delivered to you soon.            <br />
+            Thank you very much for ordering from us!
+        </p>
+
+        <a asp-area="" asp-page="/Index" class="btn btn-primary">Return To Homepage</a>
+    </div>
+</div>

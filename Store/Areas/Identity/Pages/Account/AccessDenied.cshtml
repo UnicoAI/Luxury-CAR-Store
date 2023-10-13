@@ -1,0 +1,15 @@
+﻿@page
+@model AccessDeniedModel
+@{
+    ViewData["Title"] = "Access Denied";
+}
+
+<div class="card m-auto mt-4 text-center" style="max-width: 750px">
+    <div class="bg-danger card-header py-3 text-white" style="font-size: 1.4rem">
+        @ViewData["Title"]
+    </div>
+    <div class="card-body py-5">
+        <h5 class="card-title" style="font-size: 1.1rem">You do not have access to this page or information.</h5>
+        <a asp-area="" asp-page="/Index" class="btn btn-primary mt-3">Return to the homepage</a>
+    </div>
+</div>

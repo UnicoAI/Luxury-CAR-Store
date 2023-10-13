@@ -1,0 +1,66 @@
+﻿@{
+    if (ViewData.TryGetValue("ParentLayout", out var parentLayout) && parentLayout != null)
+    {
+        Layout = parentLayout.ToString();
+    }
+    else
+    {
+        // Layout = "/Areas/Identity/Pages/_Layout.cshtml";
+    }
+}
+
+<div class="align-items-stretch d-flex wrapper">
+    <nav class="bg-dark" id="sidebar">
+        <div class="custom-menu">
+            <button class="btn-sidebar btn-sidebar-primary" id="sidebarCollapse" type="button">
+                <i class="fa fa-bars"></i>
+                <span class="sr-only">Toggle Menu</span>
+            </button>
+        </div>
+        <div class="p-4">
+            <div class="d-flex flex-column gap-2 text-center">
+                <a asp-page="/Account/Manage/Index" class="text-white" style="font-size: 1.1rem">
+                    Profile Management
+                </a>
+                <span class="text-white user-select-none">@User.Identity!.Name</span>
+            </div>
+            <hr class="bg-white"/>
+            <ul class="components list-unstyled mb-5 sidebar-items">
+                <li>
+                    <a asp-page="/Account/Manage/Index" class="d-flex">
+                        <span class="material-symbols material-symbols-fill mr-3 text-white">
+                            person
+                        </span>
+                        Personal Information
+                    </a>
+                </li>
+                <li>
+                    <a asp-page="/Account/Manage/ChangePassword" class="d-flex">
+                        <span class="material-symbols material-symbols-fill mr-3 text-white">
+                            lock
+                        </span>
+                        Password
+                    </a>
+                </li>
+                <li>
+                    <a asp-page="/Account/Manage/PersonalData" class="d-flex">
+                        <span class="material-symbols material-symbols-fill mr-3 text-white">
+                            admin_panel_settings
+                        </span>
+                        Personal Data
+                    </a>
+                </li>
+     
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Content  -->
+    <div class="p-4 p-md-5 pt-5" id="content">
+        @RenderBody()
+    </div>
+</div>
+
+@section Scripts {
+    @RenderSection("Scripts", required: false)
+}

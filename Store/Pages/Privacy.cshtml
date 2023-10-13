@@ -1,0 +1,43 @@
+﻿@page
+@model Store.Pages.PrivacyModel
+@{
+    ViewData["Title"] = "Privacy";
+}
+
+<div class="card m-auto mt-3" style="max-width: 1300px">
+    <div class="card-header text-center">
+        <h1 class="py-1" style="font-size: 1.3rem">@ViewData["Title"]</h1>
+    </div>
+
+    <div class="card-body p-4">
+        <p class="lead">
+            Welcome to our privacy page. Here, we will explain to you how we collect, use, and maintain your information. Please read this text carefully.
+        </p>
+
+        <h2>Data collection</h2>
+        <p>
+            When you visit our website, we may collect information such as your IP address, browser type, operating system, and the pages you visit.
+       ol </p>
+
+        <h2>Data usage</h2>
+        <p>
+            We use the collected information to improve user experience and optimize our website. We also use your information to communicate with you and inform you about our services and updates.
+        </p>
+
+        <h2>Data transfer</h2>
+        <p>
+            We will not transfer any of your personal information to other persons or companies unless we do so with your permission or to comply with relevant laws.
+        </p>
+
+        <h2>Security</h2>
+        <p>
+            We may make changes to our privacy policy in the future. Any changes we make will be published on this page.
+        </p>
+
+        
+
+        <p class="mt-5 text-center">
+            If you have any questions about our privacy policy, please <a asp-page="/ContactUs/Index"> Contact us.</a>.
+        </p>
+    </div>
+</div>
