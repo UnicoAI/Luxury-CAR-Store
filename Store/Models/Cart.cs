@@ -4,7 +4,8 @@ using Microsoft.AspNetCore.Identity;
 
 namespace Store.Models;
 
-public class Cart {
+public class Cart
+{
     [Key]
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id { get; set; }
@@ -16,12 +17,5 @@ public class Cart {
     public Product Product { get; set; } = default!;
 
     public int Quantity { get; set; }
-    public List<Order> Orders { get; set; } // Navigation property
-
     public bool IsArchived { get; set; }
-
-    public static implicit operator Cart(int v)
-    {
-        throw new NotImplementedException();
-    }
 }

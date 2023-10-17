@@ -132,195 +132,88 @@ namespace Store.Data
 
             var categories = new List<Category>
             {
-                new() { Name = "Composite Doors" },
-                new() { Name = "Upvc Windows" },
-                new() { Name = "Upvc Doors" },
-                new() { Name = "Roof Windows" },
-                new() { Name = "Conservatories" },
-                new() { Name = "Bespoke" },
+                new() { Name = "BMW" },
+                new() { Name = "BENTLEY" },
+                new() { Name = "PORSCHE" },
+                new() { Name = "FERRARI" },
+                new() { Name = "LAND ROVER" },
+                new() { Name = "PRE ORDER" },
             };
             context.Categories.AddRange(categories);
 
             context.Products.AddRange(
                 new Product
                 {
-                    Name = "Composite Door Unico1",
-                    Description = "Solid Composite Door, Fire Resistant, 10 Years Warranty, Supply Only",
+                    Name = "BMW",
+                    Description = "On track for solid growth in 2023: Dynamic BEV growth and global sales increase Q3.",
                     ProductCategories = new List<ProductCategory>
                     {
                         new() { Category = categories[0] },
                         new() { Category = categories[5] }
                     },
-                    Price = 1250,
+                    Price = 125000,
                     StockQuantity = 50,
-                    Image = "/img/products/door1.jpg",
-                    ProductWeight = 50.00,
+                    Image = "/img/products/bmw.jpeg",
+                    ProductWeight = 3050.00,
                 },
                 new Product
                 {
-                    Name = "Composite Unico Fly",
-                    Description = "Solid Composite Door, Fire Resistant, 10 Years Warranty, Supply Only",
-                    ProductCategories = new List<ProductCategory> { new() { Category = categories[0] } },
+                    Name = "Bentley",
+                    Description = "On track for solid growth in 2023: Dynamic BEV growth and global sales increase Q3.",
+                    ProductCategories = new List<ProductCategory> { new() { Category = categories[1] } },
                     Price = 1800,
                     StockQuantity = 9,
-                    Image = "/img/products/door2.jpg",
-                    ProductWeight = 55.50,
+                    Image = "/img/products/bentley.jpeg",
+                    ProductWeight = 3055.50,
                 },
+   
                 new Product
                 {
-                    Name = "Composite Unico EU",
-                    Description = "Solid Composite Door, Fire Resistant, 10 Years Warranty, Supply Only",
-                    ProductCategories = new List<ProductCategory> { new() { Category = categories[0] } },
-                    Price = 2200,
-                    StockQuantity = 35,
-                    Image = "/img/products/door3.jpg",
-                    ProductWeight = 66.30,
-                },
-                new Product
-                {
-                    Name = "Composite Unico Traditional",
-                    Description = "Solid Composite Door, Fire Resistant, 10 Years Warranty, Supply Only",
-                    ProductCategories = new List<ProductCategory> { new() { Category = categories[0] } },
-                    Price = 1000,
+                    Name = "Porsche",
+                    Description = "On track for solid growth in 2023: Dynamic BEV growth and global sales increase Q3.",
+                    ProductCategories = new List<ProductCategory> { new() { Category = categories[2] } },
+                    Price = 100000,
                     StockQuantity = 25,
-                    Image = "/img/products/door3.jpg",
-                    ProductWeight = 70.7,
+                    Image = "/img/products/porsche.jpeg",
+                    ProductWeight = 2070.7,
                 },
                 new Product
                 {
-                    Name = "Composte Door Dior",
-                    Description = "Solid Composite Door, Fire Resistant, 10 Years Warranty, Supply Only",
-                    ProductCategories = new List<ProductCategory>
-                    {
-                        new() { Category = categories[0] },
-                        new() { Category = categories[5] }
-                    },
-                    Price = 1500,
-                    StockQuantity = 60,
-                    Image = "/img/products/door4.jpg",
-                    ProductWeight = 70.3,
-                },
-                new Product
-                {
-                    Name = "Composite Door Evoque",
-                    Description = "Solid Composite Door, Fire Resistant, 10 Years Warranty, Supply Only",
-                    ProductCategories = new List<ProductCategory> { new() { Category = categories[0] } },
-                    Price = 1200,
-                    StockQuantity = 100,
-                    Image = "/img/products/door5.jpg",
-                    ProductWeight = 70.1,
-                },
-                new Product
-                {
-                    Name = "Composite Door Modern",
-                    Description = "Solid Composite Door, Fire Resistant, 10 Years Warranty, Supply Only",
-                    ProductCategories = new List<ProductCategory> { new() { Category = categories[0] } },
-                    Price = 1800,
-                    StockQuantity = 8,
-                    Image = "/img/products/door5.jpg",
-                    ProductWeight = 70.2,
-                },
-                new Product
-                {
-                    Name = "Upvc Windows",
-                    Description = "Upvc Windows made to measure, Fire Resistant, 10 Years Warranty, Supply Only",
-                    ProductCategories = new List<ProductCategory> { new() { Category = categories[1] } },
-                    Price = 500,
-                    StockQuantity = 90,
-                    Image = "/img/products/window1.gif",
-                    ProductWeight = 70.12,
-                },
-                    new Product
-                    {
-                        Name = "Upvc Windows 2",
-                        Description = "Upvc Windows made to measure, Fire Resistant, 10 Years Warranty, Supply Only",
-                        ProductCategories = new List<ProductCategory> { new() { Category = categories[1] } },
-                        Price = 650,
-                        StockQuantity = 90,
-                        Image = "/img/products/window2.gif",
-                        ProductWeight = 50.12,
-                    },
-                new Product
-                {
-                    Name = "Upvc Door Standard",
-                    Description = "Upvc Door made to measure, Fire Resistant, ten Years Warranty, Supply Only",
-                    ProductCategories = new List<ProductCategory> { new() { Category = categories[2] } },
-                    Price = 800,
-                    StockQuantity = 30,
-                    Image = "/img/products/door8.jpg",
-                    ProductWeight = 81.0
-                },
-                new Product
-                {
-                    Name = "Upvc Door Modern",
-                    Description = "Upvc Door made to measure, Fire Resistant, ten Years Warranty, Supply Only",
-                    ProductCategories = new List<ProductCategory> { new() { Category = categories[2] } },
-                    Price = 900,
-                    StockQuantity = 30,
-                    Image = "/img/products/door9.jpg",
-                    ProductWeight = 81.0
-                },
-                new Product
-                {
-                    Name = "Bespoke Upvc Door",
-                    Description = "Upvc Door made to measure, Fire Resistant, ten Years Warranty, Supply Only",
-                    ProductCategories = new List<ProductCategory>
-                    {
-                        new() { Category = categories[2] },
-                        new() { Category = categories[5] }
-                    },
-                    Price = 900,
-                    StockQuantity = 40,
-                    Image = "/img/products/door10.jpg",
-                    ProductWeight = 80.5,
-                },
-                new Product
-                {
-                    Name = "Roof Windows",
-                    Description = "Roof Windows made to measure, Fire Resistant, ten Years Warranty, Supply Only",
-                    ProductCategories = new List<ProductCategory> { new() { Category = categories[3] } },
-                    Price = 1000,
-                    StockQuantity = 60,
-                    Image = "/img/products/roof1.jpg",
-                    ProductWeight = 100.4
-                },
-                new Product
-                {
-                    Name = "Roof Windows Conservatory",
-                    Description = "Upvc Roof Windows made to measure, Fire Resistant, ten Years Warranty, Supply Only",
+                    Name = "Ferrari",
+                    Description = "On track for solid growth in 2023: Dynamic BEV growth and global sales increase Q3.",
                     ProductCategories = new List<ProductCategory>
                     {
                         new() { Category = categories[3] },
                         new() { Category = categories[5] }
                     },
-                    Price = 750,
-                    StockQuantity = 6,
-                    Image = "/img/products/roof2.jpg",
-                    ProductWeight = 92.5,
+                    Price = 150000,
+                    StockQuantity = 60,
+                    Image = "/img/products/ferrari.jpeg",
+                    ProductWeight = 2070.3,
                 },
                 new Product
                 {
-                    Name = "Conservatories",
-                    Description = "Full Conservatories made to measure, Fire Resistant, ten Years Warranty, Supply Only.",
-                    ProductCategories = new List<ProductCategory> { new() { Category = categories[4] } },
-                    Price = 35000,
-                    StockQuantity = 15,
-                    Image = "/img/products/Conservatory1.jpg",
-                    ProductWeight = 2551.2
+                    Name = "Land Rover",
+                    Description = "Solid Composite Door, Fire Resistant, 10 Years Warranty, Supply Only",
+                    ProductCategories = new List<ProductCategory> { new() { Category = categories[0] } },
+                    Price = 128000,
+                    StockQuantity = 100,
+                    Image = "/img/products/landrover.jpeg",
+                    ProductWeight = 3070.1,
                 },
-                
+               
                 new Product
                 {
-                    Name = "Bespoke Conservaories",
-                    Description = "Bespoke Conservatories made to measure, Fire Resistant, ten Years Warranty, Supply Only",
+                    Name = "Preorder",
+                    Description = "On track for solid growth in 2023: Dynamic BEV growth and global sales increase Q3.",
                     ProductCategories = new List<ProductCategory>
                     {
                         new() { Category = categories[4] },
                         new() { Category = categories[5] }
                     },
-                    Price = 20000,
+                    Price = 200000,
                     StockQuantity = 25,
-                    Image = "/img/products/Conservatory1.jpg",
+                    Image = "/img/products/lamborghini.jpeg",
                     ProductWeight = 3550.6
                 }
             );

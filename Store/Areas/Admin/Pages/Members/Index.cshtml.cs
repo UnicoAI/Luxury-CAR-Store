@@ -35,7 +35,7 @@ namespace Store.Areas.Admin.Pages.Members
                     DisplayId = user.Id,
                     Username = user.UserName!,
                     Roles = string.Join(", ", _userManager.GetRolesAsync(user).Result.ToArray()),
-                    CanDelete = user.Id != HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier)
+                    CanDelete = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier) != null && user.Id != HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier)
                 });
 
             await LoadItemsAsync(query, p, limit ?? 5);
@@ -43,5 +43,6 @@ namespace Store.Areas.Admin.Pages.Members
             foreach (var item in Items)
                 item.DisplayId = Utility.ConvertGuidToViewModel(item.DisplayId) ?? "Invalid-Id";
         }
+
     }
 }

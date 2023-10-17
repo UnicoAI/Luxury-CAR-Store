@@ -15,5 +15,5 @@ public class Product {
     [Range(0, int.MaxValue)] public int StockQuantity { get; set; }        // Current stock quantity
     public string Image { get; set; }
     [Range(0, double.MaxValue)] public double ProductWeight { get; set; } // Product weight
-    public List<Order> Orders { get; set; } // Navigation property
+
 }

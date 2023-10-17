@@ -1,7 +1,7 @@
 ﻿@page
 @model Store.Pages.IndexModel
 @{
-    ViewData["Title"] = "Unico Upvc Windows and Doors";
+    ViewData["Title"] = "Luxurious Cars";
 }
 
 <div class="carousel carousel-fade slide" data-bs-ride="carousel" id="slideshow">
@@ -14,35 +14,35 @@
     </div>
     <div class="carousel-inner">
         <div class="active carousel-item" data-bs-interval="5000">
-            <img alt="slide-1" class="d-block w-100" src="/img/slideshow/Door0.jpg">
+            <img alt="slide-1" class="d-block w-100" src="/img/slideshow/bmw.png">
             <div class="carousel-caption d-md-block d-none" dir="ltr">
                 <h5>Save Money With Us</h5>
                 <p>Unbeatable Prices</p>
             </div>
         </div>
         <div class="carousel-item" data-bs-interval="5000">
-            <img alt="slide-2" class="d-block w-100" src="/img/slideshow/Door1.jpg">
+            <img alt="slide-2" class="d-block w-100" src="/img/slideshow/jaguar.png">
             <div class="carousel-caption d-md-block d-none" dir="ltr">
-                <h5>Made To Measure</h5>
+                <h5>New Jaguar</h5>
                 <p>Your wish, our job to accomplish it</p>
             </div>
         </div>
         <div class="carousel-item" data-bs-interval="5000">
-            <img alt="slide-3" class="d-block w-100" src="/img/slideshow/Door2.jpg">
+            <img alt="slide-3" class="d-block w-100" src="/img/slideshow/mercedes.png">
             <div class="carousel-caption d-md-block d-none" dir="ltr">
                  <h5>Buy Now Pay Later</h5>
                 <p>Interest Free</p>
             </div>
         </div>
         <div class="carousel-item" data-bs-interval="5000">
-            <img alt="slide-4" class="d-block w-100" src="/img/slideshow/Door3.jpg">
+            <img alt="slide-4" class="d-block w-100" src="/img/slideshow/porsche.png">
             <div class="carousel-caption d-md-block d-none" dir="ltr">
                 <h5>Save Money With Us</h5>
                 <p>Unbeatable Prices</p>
             </div>
         </div>
         <div class="carousel-item" data-bs-interval="5000">
-            <img alt="slide-5" class="d-block w-100" src="/img/slideshow/Door4.jpg">
+            <img alt="slide-5" class="d-block w-100" src="/img/slideshow/landrover.png">
             <div class="carousel-caption d-md-block d-none" dir="ltr">
                <h5>Bespoke Orders</h5>
                 <p>Fast Deliveries</p>
@@ -61,7 +61,7 @@
 </div>
 
 @foreach (var category in Model.Categories) {
-    <div class="card m-auto my-5" style="max-width: 1200px;">
+    <div class="card m-auto my-5" style="max-width: 1200px;background: rgba(42, 44, 57, 0.9);color:white">
         <div class="bg-white card-header px-0 py-0" style="font-size: 1.3rem">
             <div class="category-title py-3 text-center text-white" dir="ltr">@category.Title</div>
         </div>

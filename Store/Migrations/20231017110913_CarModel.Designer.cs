@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Store.Data;
 
@@ -11,9 +12,11 @@ using Store.Data;
 namespace Store.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231017110913_CarModel")]
+    partial class CarModel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -297,6 +300,51 @@ namespace Store.Migrations
                     b.ToTable("Messages");
                 });
 
+            modelBuilder.Entity("Store.Models.Order", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("OrderDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int?>("OrderId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ProductId1")
+                        .HasColumnType("int");
+
+                    b.Property<int>("QuantityId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("OrderId");
+
+                    b.HasIndex("ProductId");
+
+                    b.HasIndex("ProductId1");
+
+                    b.HasIndex("QuantityId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Orders");
+                });
+
             modelBuilder.Entity("Store.Models.Product", b =>
                 {
                     b.Property<int>("Id")
@@ -416,6 +464,43 @@ namespace Store.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("Store.Models.Order", b =>
+                {
+                    b.HasOne("Store.Models.Order", null)
+                        .WithMany("Orders")
+                        .HasForeignKey("OrderId");
+
+                    b.HasOne("Store.Models.Cart", "Product")
+                        .WithMany("Orders")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("Store.Models.Product", null)
+                        .WithMany("Orders")
+                        .HasForeignKey("ProductId1")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Store.Models.Cart", "Quantity")
+                        .WithMany()
+                        .HasForeignKey("QuantityId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
+
+                    b.Navigation("Quantity");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("Store.Models.ProductCategory", b =>
                 {
                     b.HasOne("Store.Models.Category", "Category")
@@ -435,13 +520,25 @@ namespace Store.Migrations
                     b.Navigation("Product");
                 });
 
+            modelBuilder.Entity("Store.Models.Cart", b =>
+                {
+                    b.Navigation("Orders");
+                });
+
             modelBuilder.Entity("Store.Models.Category", b =>
                 {
                     b.Navigation("ProductCategories");
                 });
 
+            modelBuilder.Entity("Store.Models.Order", b =>
+                {
+                    b.Navigation("Orders");
+                });
+
             modelBuilder.Entity("Store.Models.Product", b =>
                 {
+                    b.Navigation("Orders");
+
                     b.Navigation("ProductCategories");
                 });
 #pragma warning restore 612, 618
