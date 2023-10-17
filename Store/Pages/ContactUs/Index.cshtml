@@ -5,37 +5,125 @@
     ViewData["Title"] = "Contact Us";
 }
 
-<div class="card m-auto mt-3" style="max-width: 600px">
-    <h5 class="bg-primary card-header py-3 text-center text-white">@ViewData["Title"]</h5>
-    <div class="card-body">
-        <form class="d-flex flex-column gap-3" method="post">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Input.Name" class="control-label"></label>
-                <input asp-for="Input.Name" class="form-control" />
-                <span asp-validation-for="Input.Name" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Input.Email" class="control-label"></label>
-                <input asp-for="Input.Email" class="form-control" />
-                <span asp-validation-for="Input.Email" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Input.Title" class="control-label"></label>
-                <input asp-for="Input.Title" class="form-control" />
-                <span asp-validation-for="Input.Title" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Input.Message" class="control-label"></label>
-                @Html.TextAreaFor(model => model.Input.Message, new { @class = "form-control", @rows = 4 })
-                <span asp-validation-for="Input.Message" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input class="btn btn-primary" type="submit" value="Send Message" />
-            </div>
-        </form>
+<div class="carousel carousel-fade slide" data-bs-ride="carousel" id="slideshow">
+    <div class="carousel-indicators">
+        <button aria-current="true" aria-label="Slide 1" class="active" data-bs-slide-to="0" data-bs-target="#slideshow" type="button"></button>
+        <button aria-label="Slide 2" data-bs-slide-to="1" data-bs-target="#slideshow" type="button"></button>
+        <button aria-label="Slide 3" data-bs-slide-to="2" data-bs-target="#slideshow" type="button"></button>
+        <button aria-label="Slide 4" data-bs-slide-to="3" data-bs-target="#slideshow" type="button"></button>
+        <button aria-label="Slide 5" data-bs-slide-to="4" data-bs-target="#slideshow" type="button"></button>
     </div>
+    <div class="carousel-inner">
+        <div class="active carousel-item" data-bs-interval="5000">
+            <img alt="slide-1" class="d-block w-100" src="/img/slideshow/bmw.png">
+            <div class="carousel-caption d-md-block d-none" dir="ltr">
+                <h5>Contact Us </h5>
+                <p>We are here to Help</p>
+            </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="5000">
+            <img alt="slide-2" class="d-block w-100" src="/img/slideshow/jaguar.png">
+            <div class="carousel-caption d-md-block d-none" dir="ltr">
+                <h5>New Jaguar</h5>
+                <p>Your wish, our job to accomplish it</p>
+            </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="5000">
+            <img alt="slide-3" class="d-block w-100" src="/img/slideshow/mercedes.png">
+            <div class="carousel-caption d-md-block d-none" dir="ltr">
+                <h5>Buy Now Pay Later</h5>
+                <p>Interest Free</p>
+            </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="5000">
+            <img alt="slide-4" class="d-block w-100" src="/img/slideshow/porsche.png">
+            <div class="carousel-caption d-md-block d-none" dir="ltr">
+                <h5>Save Money With Us</h5>
+                <p>Unbeatable Prices</p>
+            </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="5000">
+            <img alt="slide-5" class="d-block w-100" src="/img/slideshow/landrover.png">
+            <div class="carousel-caption d-md-block d-none" dir="ltr">
+                <h5>Bespoke Orders</h5>
+                <p>Fast Deliveries</p>
+            </div>
+        </div>
+
+    </div>
+    <button class="carousel-control-prev" data-bs-slide="prev" data-bs-target="#slideshow" type="button">
+        <span aria-hidden="true" class="carousel-control-prev-icon"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" data-bs-slide="next" data-bs-target="#slideshow" type="button">
+        <span aria-hidden="true" class="carousel-control-next-icon"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
 </div>
+<div class="container mt-3">
+    <div class="row">
+       
+
+        <!-- Right Container for Contact Form -->
+        <div class="col-md-6" style="
+background: rgba(255, 255, 255, 0.2);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 255, 255, 0.3);">
+                <h5 class="bg-transparent card-header py-3 text-center text-white">We aim to respond in 24h!</h5>
+                <div class="card-body">
+                    <form class="d-flex flex-column gap-3" method="post">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group">
+                        <label asp-for="Input.Name" class="control-label text-white"></label>
+                            <input asp-for="Input.Name" class="form-control" />
+                            <span asp-validation-for="Input.Name" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                        <label asp-for="Input.Email" class="control-label text-white"></label>
+                            <input asp-for="Input.Email" class="form-control" />
+                            <span asp-validation-for="Input.Email" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                        <label asp-for="Input.Title" class="control-label text-white"></label>
+                            <input asp-for="Input.Title" class="form-control" />
+                            <span asp-validation-for="Input.Title" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                        <label asp-for="Input.Message" class="control-label text-white"></label>
+                            @Html.TextAreaFor(model => model.Input.Message, new { @class = "form-control", @rows = 4 })
+                            <span asp-validation-for="Input.Message" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <input class="btn btn-primary" type="submit" value="Send Message" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        <!-- Left Container for Contact Details -->
+        <div class="col-md-6">
+            <div class="card" style="
+background: rgba(255, 255, 255, 0.2);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 255, 255, 0.3);">
+                <h5 class="bg-transparent card-header py-3 text-center text-white">@ViewData["Title"]</h5>
+                <div class="card-body text-white">
+                    <!-- Add your contact details here -->
+                    <p>Luxurios Cars</p>
+                    <p>Address: Burnley</p>
+                    <p>Phone: 07588201201</p>
+                    <p>Email: 100188612@student.burnley.ac.uk</p>
+                </div>
+            </div>
+        </div>
+        </div>
+        </div>
+  
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />

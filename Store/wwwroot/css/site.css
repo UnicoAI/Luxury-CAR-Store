@@ -220,11 +220,13 @@ img {
         -webkit-font-smoothing: antialiased;
     }
 
-    body {
-        dir ="ltr";
-        width: 100%;
-    }
 body {
+ 
+    width: 100%;
     background: rgba(42, 44, 57, 0.9);
-  
+    direction: ltr;
 }
+.normal-text {
+    direction: ltr;
+}
+
