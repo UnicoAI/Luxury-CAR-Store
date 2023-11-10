@@ -24,4 +24,6 @@ public class ApplicationDbContext : IdentityDbContext
         modelBuilder.Entity<ProductCategory>()
             .HasKey(productCategory => new { productCategory.CategoryId, productCategory.ProductId });
     }
+
+  
 }
