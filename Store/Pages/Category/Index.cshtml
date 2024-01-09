@@ -3,8 +3,11 @@
 @using Store.Models
 @model Store.Pages.Category.Index
 
-<div class="card m-auto my-5" style="max-width: 1200px;">
-    <div class="bg-white card-header px-0 py-0" style="font-size: 1.3rem">
+<div class="card m-auto my-5 bg-transparent" style="max-width: 1200px;border: 2px solid;
+  padding: 10px;
+  box-shadow: 5px 10px white;">
+    <div class="bg-transparent card-header px-0 py-0" style="font-size: 1.3rem;
+  ">
         <div class="category-title py-3 text-center text-white">@Model.CategoryName</div>
     </div>
     <div class="card-body d-flex flex-wrap gap-5 justify-content-center py-4">
@@ -16,9 +19,9 @@
                         <h5 class="card-title" style="font-size: 1.1rem">@product.Name</h5>
                         <p class="card-text" style="font-size: 1rem; height: 72px">@product.Description</p>
                         <div class="align-items-center d-flex flex-column gap-1 justify-content-center mt-3" style="height: 50px">
-                            <span style="color: #428bca">£ @product.Price </span>
+                            <span style="color: #428bca;font-size: 1.3rem;font-weight:500;">£ @product.Price </span>
                             @if (product.StockQuantity < 10) {
-                                <span class="small text-danger" style="font-size: 0.82rem">Only @product.StockQuantity Left Only</span>
+                                <span class="small text-danger" style="font-size: 1.3rem;font-weight:500;">Only @product.StockQuantity Left Only</span>
                             }
                         </div>
 

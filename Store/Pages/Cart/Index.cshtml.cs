@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using Store.Data;
+using static Store.Data.ApplicationDbContext;
 
 namespace Store.Pages.Cart
 {
@@ -62,6 +63,7 @@ namespace Store.Pages.Cart
         public async Task OnGetAsync()
         {
             await LoadDataAsync();
+
         }
 
         private async Task LoadDataAsync()
@@ -111,10 +113,11 @@ namespace Store.Pages.Cart
             var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
             if (userId is null) throw new Exception($"Expected {nameof(userId)} to be not null.");
 
-            var hasError = _context.Carts
+            var hasError = await _context.Carts
                 .Include(cart => cart.Product)
                 .Where(cart => !cart.IsArchived && cart.UserId == userId)
-                .Any(cart => cart.Quantity > cart.Product.StockQuantity);
+                .AnyAsync(cart => cart.Quantity > cart.Product.StockQuantity);
+
             if (hasError)
             {
                 await LoadDataAsync();
@@ -126,15 +129,41 @@ namespace Store.Pages.Cart
                             .Include(cart => cart.Product)
                             .ToListAsync();
 
-            foreach (var cart in carts)
+            using (var transaction = await _context.Database.BeginTransactionAsync())
             {
-                cart.IsArchived = true;
-                cart.Product.StockQuantity -= cart.Quantity;
-            }
+                try
+                {
+                    // Save cart details and product information
+                    foreach (var cart in carts)
+                    {
+                        var order = new Order
+                        {
+                            UserId = userId,
+                            ProductId = cart.Product.Id,
+                            Quantity = cart.Quantity,
+                            TotalPrice = cart.Quantity * cart.Product.Price
+                        };
 
-            await _context.SaveChangesAsync();
-            return RedirectToPage("./Success");
+                        _context.Orders.Add(order);
+
+                        cart.IsArchived = true;
+                        cart.Product.StockQuantity -= cart.Quantity;
+                    }
+
+                    await _context.SaveChangesAsync();
+                    await transaction.CommitAsync();
+
+                    return RedirectToPage("./Success");
+                }
+                catch (Exception)
+                {
+                    // Handle exceptions and rollback transaction if needed
+                    await transaction.RollbackAsync();
+                    throw;
+                }
+            }
         }
+
 
         public async Task<IActionResult> OnPostDeleteCart(int? cartId)
         {

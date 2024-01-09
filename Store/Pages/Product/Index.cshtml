@@ -45,7 +45,7 @@
         </div>
     </div>
     <div class="align-items-center d-flex flex-column gap-2 mt-5">
-        <span class="mb-2" style="color: #428bca; font-size: 1.2rem">£ @Model.ProductModel.Price </span>
+        <span class="mb-2" style="color: #428bca; font-size: 1.3rem;font-weight:500;">£ @Model.ProductModel.Price </span>
         @if (Model.ProductModel.IsInCart) {
             <form asp-page-handler="RemoveCart" method="post">
                 <input name="productId" type="hidden" value="@Model.ProductModel.Id"/>
