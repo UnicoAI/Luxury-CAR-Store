@@ -4,22 +4,29 @@
 <div class="d-flex flex-column gap-5">
     <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-md-start mt-4 ">
         @* Total Sales *@
-        <div class="card shadow-sm" style="width: 300px; border-top: 5px solid #126efb">
+        <div class="card shadow-sm" style="width: 49%; border-top: 5px solid #126efb">
             <div class="align-items-center card-body d-flex flex-row justify-content-around">
                 <div class="align-items-center bg-primary-subtle d-flex justify-content-center rounded-circle" style="width: 75px; height: 75px">
-                    <span class="material-symbols material-symbols-outlined" style="font-size: 2.8rem; color: #126efb">
-                        point_of_sale
-                    </span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-currency-pound" viewBox="0 0 16 16">
+                        <path d="M4 8.585h1.969c.115.465.186.939.186 1.43 0 1.385-.736 2.496-2.075 2.771V14H12v-1.24H6.492v-.129c.825-.525 1.135-1.446 1.135-2.694 0-.465-.07-.913-.168-1.352h3.29v-.972H7.22c-.186-.723-.372-1.455-.372-2.247 0-1.274 1.047-2.066 2.58-2.066a5.3 5.3 0 0 1 2.103.465V2.456A5.6 5.6 0 0 0 9.348 2C6.865 2 5.322 3.291 5.322 5.366c0 .775.195 1.515.399 2.247H4z" />
+                    </svg>
                 </div>
                 <div class="align-items-center d-flex flex-column">
                     <span class="fw-bold" style="font-size: 2rem">@Model.InfoModel.TotalSales</span>
-                    <span style="font-size: 0.9rem">Total Sold Products</span>
+                    <span style="font-size: 0.9rem">Total Orders</span>
+                    <a asp-page="./Orders/Index" class="btn btn-lg btn-primary rounded-0" style="font-size: 1rem; background-color: #0a54c3">
+                       
+                        <div class="d-flex flex-row gap-2 justify-content-center">
+                            View Orders
+                            <span class="material-symbols material-symbols-fill" style="font-size: 22px;"> arrow_circle_right </span>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
 
         @* Total Products In Cart *@
-        <div class="card shadow-sm" style="width: 300px; border-top: 5px solid #fb1212">
+        <div class="card shadow-sm" style="width: 49%; border-top: 5px solid #fb1212">
             <div class="align-items-center card-body d-flex flex-row justify-content-around">
                 <div class="align-items-center d-flex justify-content-center rounded-circle" style="width: 75px; height: 75px; background-color: #ffcfcf">
                     <span class="material-symbols material-symbols-outlined" style="font-size: 2.8rem; color: #fb1212">
@@ -47,7 +54,7 @@
             <a asp-page="./ContactUs/Index" class="btn btn-lg btn-primary rounded-0" style="font-size: 1rem; background-color: #0a54c3">
                 <div class="d-flex flex-row gap-2 justify-content-center">
                     View Messages
-                    <span class="material-symbols material-symbols-fill" style="font-size: 22px;"> arrow_circle_left </span>
+                    <span class="material-symbols material-symbols-fill" style="font-size: 22px;"> arrow_circle_right </span>
                 </div>
             </a>
         </div>
@@ -64,7 +71,7 @@
             <a asp-page="./Members/Index" class="btn btn-lg rounded-0 text-white" style="font-size: 1rem; background-color: #cf9d05">
                 <div class="d-flex flex-row gap-2 justify-content-center">
                     View Members
-                    <span class="material-symbols material-symbols-fill" style="font-size: 22px;"> arrow_circle_left </span>
+                    <span class="material-symbols material-symbols-fill" style="font-size: 22px;"> arrow_circle_right </span>
                 </div>
             </a>
         </div>
@@ -81,13 +88,13 @@
             <a asp-page="./Categories/Index" class="btn btn-lg rounded-0 text-white" style="font-size: 1rem; background-color: #02819b">
                 <div class="d-flex flex-row gap-2 justify-content-center">
                     Manage Categories
-                    <span class="material-symbols material-symbols-fill" style="font-size: 22px;"> arrow_circle_left </span>
+                    <span class="material-symbols material-symbols-fill" style="font-size: 22px;"> arrow_circle_right </span>
                 </div>
             </a>
         </div>
 
         @* Products *@
-        <div class="card mb-3 text-bg-success" style="max-width: 18rem; min-width: 260px">
+        <div class="card mb-3 text-bg-light" style="max-width: 18rem; min-width: 260px">
             <div class="card-header" style="font-size: 1.2rem">Number of Products</div>
             <div class="card-body position-relative py-3">
                 <span class="card-icon material-symbols material-symbols-outline opacity-50 position-absolute">
@@ -95,10 +102,10 @@
                 </span>
                 <span class="position-relative" style="font-size: 2.5rem;top: 4px;right: -34px;">@Model.InfoModel.NumOfProducts</span>
             </div>
-            <a asp-page="./Products/Index" class="btn btn-lg rounded-0 text-white" style="font-size: 1rem; background-color: #12653e">
+            <a asp-page="./Products/Index" class="btn btn-lg rounded-0 text-white" style="font-size: 1rem; background-color: #0a54c3">
                 <div class="d-flex flex-row gap-2 justify-content-center">
                     View Products
-                    <span class="material-symbols material-symbols-fill" style="font-size: 22px;"> arrow_circle_left </span>
+                    <span class="material-symbols material-symbols-fill" style="font-size: 22px;"> arrow_circle_right </span>
                 </div>
             </a>
         </div>

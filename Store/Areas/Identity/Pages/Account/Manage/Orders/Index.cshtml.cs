@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Security.Claims;
@@ -9,7 +9,7 @@ using Store.Data;
 using Store.Utilities;
 using static Store.Data.ApplicationDbContext;
 
-namespace Store.Areas.Admin.Pages.Members
+namespace Store.Areas.Identity.Pages.Account.Manage.Orders
 {
     public class IndexModel : PaginationModel<IndexModel.User>
     {
