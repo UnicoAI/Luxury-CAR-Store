@@ -1,0 +1,75 @@
+/* _content/Store/Pages/Cart/Index.cshtml.rz.scp.css */
+.div-order[b-g5h7f40yer] {
+    width: 300px;
+}
+
+@media (max-width: 768px) {
+    .div-order[b-g5h7f40yer] {
+        margin: 12px auto auto;
+    }
+}
+/* _content/Store/Pages/Privacy.cshtml.rz.scp.css */
+.lead[b-xcnn9ea9du]{
+    font-size: 1.1rem !important;
+    margin-bottom: 20px;
+}
+
+h2[b-xcnn9ea9du]{
+    font-size: 1.4rem !important;
+    margin-top: 24px;
+}
+/* _content/Store/Pages/Product/Index.cshtml.rz.scp.css */
+@media (max-width: 768px) {
+    .card[b-wylg6ht1nm] {
+        border: unset;
+    }
+}
+/* _content/Store/Pages/Shared/_Layout.cshtml.rz.scp.css */
+/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand[b-jix8up4tmx] {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+a[b-jix8up4tmx] {
+  color: #0077cc;
+}
+
+.btn-primary[b-jix8up4tmx] {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active[b-jix8up4tmx], .nav-pills .show > .nav-link[b-jix8up4tmx] {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.border-top[b-jix8up4tmx] {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom[b-jix8up4tmx] {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow[b-jix8up4tmx] {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy[b-jix8up4tmx] {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+.footer[b-jix8up4tmx] {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px;
+}

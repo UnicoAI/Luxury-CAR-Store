@@ -1,0 +1,9 @@
+.div-order[b-g5h7f40yer] {
+    width: 300px;
+}
+
+@media (max-width: 768px) {
+    .div-order[b-g5h7f40yer] {
+        margin: 12px auto auto;
+    }
+}
