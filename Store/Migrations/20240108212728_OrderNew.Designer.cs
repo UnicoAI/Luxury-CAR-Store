@@ -12,8 +12,8 @@ using Store.Data;
 namespace Store.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20231109171722_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20240108212728_OrderNew")]
+    partial class OrderNew
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

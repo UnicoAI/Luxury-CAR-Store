@@ -12,8 +12,8 @@ using Store.Data;
 namespace Store.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20231109171722_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20240108230948_OrderNew7")]
+    partial class OrderNew7
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -227,6 +227,34 @@ namespace Store.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("Store.Data.ApplicationDbContext+Order", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("TotalPrice")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("Orders");
+                });
+
             modelBuilder.Entity("Store.Models.Cart", b =>
                 {
                     b.Property<int>("Id")
@@ -298,6 +326,34 @@ namespace Store.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Messages");
+                });
+
+            modelBuilder.Entity("Store.Models.Order", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("TotalPrice")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("Order_1");
                 });
 
             modelBuilder.Entity("Store.Models.Product", b =>
@@ -400,6 +456,17 @@ namespace Store.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("Store.Data.ApplicationDbContext+Order", b =>
+                {
+                    b.HasOne("Store.Models.Product", "Name")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Name");
+                });
+
             modelBuilder.Entity("Store.Models.Cart", b =>
                 {
                     b.HasOne("Store.Models.Product", "Product")
@@ -417,6 +484,17 @@ namespace Store.Migrations
                     b.Navigation("Product");
 
                     b.Navigation("User");
+                });
+
+            modelBuilder.Entity("Store.Models.Order", b =>
+                {
+                    b.HasOne("Store.Models.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("Store.Models.ProductCategory", b =>
